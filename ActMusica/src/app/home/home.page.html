@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-title>
+  Reproductor de música
+  </ion-title>
+  </ion-toolbar>
+  </ion-header>
+  <ion-content>
+  <ion-list>
+  <ion-item *ngFor="let cancion of playlist; let i = index" (click)="cargarCancion(i)"
+  (click)="playAudio()">
+  {{ cancion.title }}
+  </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="previousTrack()">Anterior</ion-button>
+  <ion-button expand="full" (click)="playAudio()">Play/Pausa</ion-button>
+  <ion-button expand="full" (click)="stopAudio()">Stop</ion-button>
+  <ion-button expand="full" (click)="nextTrack()">Siguiente</ion-button>
+  </ion-content>
