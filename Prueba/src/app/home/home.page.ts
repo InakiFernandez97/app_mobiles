@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, NavigationExtras} from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { AnimationController } from '@ionic/angular';
 
 @Component({
@@ -10,11 +10,11 @@ import { AnimationController } from '@ionic/angular';
 export class HomePage {
   /* Objeto JSON para usuario */
 
-  user ={
+  user = {
     username: '',
     password: '',
   };
-  /* mensaje de respuesta*/ 
+  /* mensaje de respuesta*/
   mensaje = '';
 
   /* estado de carga*/
@@ -25,38 +25,38 @@ export class HomePage {
 
   }
   ngAfterContentInit() {
-  this.animarLogin();
-  
-}
+    this.animarLogin();
 
- animarLogin(){
-  //seleccionar item del front y reconcerlo como HTMLElement para que sea compatible con el metodo animate
-  const loginIcon= document.querySelector(".login img") as HTMLElement;
-  
-  //crear  y comfigurar la animacion
-  const animation = this.animationController.create()
-  .addElement(loginIcon)
-  .duration(5000)
-  .iterations(Infinity)
-  /* la configuracion de keyframe permite editar el diseño segun el tiempo de la animacion empezando desde 0 hasta 1 usando los decimales(0.5,0.25 ,0.2) */
-  .keyframes([
-    { offset: 0, opacity: '1', width: "200px", height: "200px" },
-    { offset: 0.5, opacity: '0.5', width: "150px", height: "150px" },
-    { offset: 1, opacity: '1', width: "200px", height: "200px" }
-  ]);
-  animation.play();
-}
+  }
 
-   /* NGIF = permite realizar una validacion entre html y ts validando que la variable sea true o false */
+  animarLogin() {
+    //seleccionar item del front y reconcerlo como HTMLElement para que sea compatible con el metodo animate
+    const loginIcon = document.querySelector(".login img") as HTMLElement;
+
+    //crear  y comfigurar la animacion
+    const animation = this.animationController.create()
+      .addElement(loginIcon)
+      .duration(5000)
+      .iterations(Infinity)
+      /* la configuracion de keyframe permite editar el diseño segun el tiempo de la animacion empezando desde 0 hasta 1 usando los decimales(0.5,0.25 ,0.2) */
+      .keyframes([
+        { offset: 0, opacity: '1', width: "200px", height: "200px" },
+        { offset: 0.5, opacity: '0.5', width: "150px", height: "150px" },
+        { offset: 1, opacity: '1', width: "200px", height: "200px" }
+      ]);
+    animation.play();
+  }
+
+  /* NGIF = permite realizar una validacion entre html y ts validando que la variable sea true o false */
   /* Permite cambiar el valor por defecto del spinner y comprobarlo con ngIF */
   cambiarSpinner() {
     this.spinner = !this.spinner;
   }
 
   /* Metodo para enviar los datos del usuario */
-  login(){
-    if(this.user.username.length != 0) {
-      if(this.user.password.length != 0) {
+  login() {
+    if (this.user.username.length != 0) {
+      if (this.user.password.length != 0) {
         //funciona
         this.mensaje = 'Bienvenido';
         let navigationExtras: NavigationExtras = {
