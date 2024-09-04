@@ -1,0 +1,33 @@
+
+
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 30px;
+  line-height: 26px;
+  margin-top: 70px;
+  
+}
+
+
+/* mi_estilo.css */
+ion-input[type="email"],
+ion-input[type="password"] {
+  border: 1px solid #ccc; /* Borde con color gris claro */
+  margin-bottom: 10px; /* Espacio inferior entre los campos */
+  padding: 5px; /* Espacio interno dentro del campo */
+}
+
+ion-button {
+  margin-top: 15px; /* Espacio superior entre el botón y los campos */
+  
+  
+}
