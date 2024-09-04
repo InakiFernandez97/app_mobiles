@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class HomePage {
   audio: any;
   playlist: Array<{ title: string; path: string}> = [
-    { title: 'Enter Sandman', path: 'ActMusica\src\assets\music\Enter Sandman Remastered.mp3' },
-    { title: 'Beat it', path: 'ActMusica\src\assets\music\Beat it.mp3'},
+    { title: 'Enter Sandman', path: 'assets\music\Enter Sandman Remastered.mp3' },
+    { title: 'Beat it', path: 'assets\music\Beat it.mp3'},
     //{ title: 'Canción 3', path: 'assets/audio/cancion3.mp3'},
   ];
   cancionActual: number = 0;
