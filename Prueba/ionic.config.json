@@ -1,7 +1,12 @@
 {
+<<<<<<< Updated upstream
   "name": "Prueba",
   "integrations": {
     "capacitor": {}
   },
+=======
+  "name": "New Ionic App",
+  "integrations": {},
+>>>>>>> Stashed changes
   "type": "angular"
 }
