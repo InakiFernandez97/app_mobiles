@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { AnimationController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,7 @@ export class HomePage {
   spinner = false;
 
 
-  constructor(private router: Router, private animationController: AnimationController) {
+  constructor(private router: Router, private animationController: AnimationController, private navCtrl: NavController) {
 
   }
   ngAfterContentInit() {
@@ -65,8 +66,25 @@ export class HomePage {
             password: this.user.password,
           },
         };
-
+        this.router.navigate(['/inicio'], navigationExtras);
+      } else {
+        console.log('contraseña vacia');
+        this.mensaje = 'contraseña vacia';
       }
+    } else {
+      console.log('usuario vacio');
+      this.mensaje = 'usuario vacio';
     }
+
+  }
+
+
+  /* Metodo para navegar a otra pagina */
+  SgtePagina() {
+    this.navCtrl.navigateForward('/inicio');
+  }
+
+  anteriorPagina() {
+    this.navCtrl.navigateBack('/home');
   }
 }
