@@ -1,7 +1,9 @@
+import { RestablecerContrasenaPage } from './../restablecer-contrasena/restablecer-contrasena.page';
 import { Component } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { AnimationController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-home',
@@ -21,29 +23,32 @@ export class HomePage {
   /* estado de carga*/
   spinner = false;
 
+  constructor(
+    private router: Router,
+    private animationController: AnimationController,
+    private navCtrl: NavController,
 
-  constructor(private router: Router, private animationController: AnimationController, private navCtrl: NavController) {
-
-  }
+  ) {}
+  
   ngAfterContentInit() {
     this.animarLogin();
-
   }
 
   animarLogin() {
     //seleccionar item del front y reconcerlo como HTMLElement para que sea compatible con el metodo animate
-    const loginIcon = document.querySelector(".login img") as HTMLElement;
+    const loginIcon = document.querySelector('.login img') as HTMLElement;
 
     //crear  y comfigurar la animacion
-    const animation = this.animationController.create()
+    const animation = this.animationController
+      .create()
       .addElement(loginIcon)
       .duration(9000)
       .iterations(Infinity)
       /* la configuracion de keyframe permite editar el diseño segun el tiempo de la animacion empezando desde 0 hasta 1 usando los decimales(0.5,0.25 ,0.2) */
       .keyframes([
-        { offset: 0, opacity: '1', width: "200px", height: "200px" },
-        { offset: 0.5, opacity: '0.5', width: "150px", height: "150px" },
-        { offset: 1, opacity: '1', width: "200px", height: "200px" }
+        { offset: 0, opacity: '1', width: '200px', height: '200px' },
+        { offset: 0.5, opacity: '0.5', width: '150px', height: '150px' },
+        { offset: 1, opacity: '1', width: '200px', height: '200px' },
       ]);
     animation.play();
   }
@@ -73,7 +78,6 @@ export class HomePage {
           this.cambiarSpinner();
           this.mensaje = '';
         }, 1000);
-        
       } else {
         console.log('contraseña vacia');
         this.mensaje = 'contraseña vacia';
@@ -82,28 +86,21 @@ export class HomePage {
       console.log('usuario vacio');
       this.mensaje = 'usuario vacio';
     }
-
   }
-
-
-  /* Metodo para navegar a otra pagina */
- /* SgtePagina() {
-    this.navCtrl.navigateForward('/inicio');
-  }
-
-  anteriorPagina() {
-    this.navCtrl.navigateBack('/home');
-  }*/
 
   restablecerContrasena() {
     let navigationExtras: NavigationExtras = {
       state: {
-        user: this.user
-      }
+        user: this.user,
+      },
     };
     this.router.navigate(['/restablecer-contrasena'], navigationExtras);
-    
   }
-  
-  
+
+  //RestablecerContrasena() {
+    //const state = {
+      //user: this.user,
+    //}
+    //this.navCtrl.navigateForward('/restablecer-contrasena', { state });
+  //}
 }
