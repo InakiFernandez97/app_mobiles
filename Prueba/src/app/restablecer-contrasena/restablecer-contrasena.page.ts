@@ -8,14 +8,20 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./restablecer-contrasena.page.scss'],
 })
 export class RestablecerContrasenaPage implements OnInit {
-
-  constructor(private activeroute: ActivatedRoute, private router: Router) { 
-    this.activeroute.queryParams.subscribe(params => {
-      if (this.router.getCurrentNavigation().extras.state) {
-        this.data = this.router.getCurrentNavigation().extras.state.user;
-        console.log(this.data);
-      }
-    });
+  user = "";
+  constructor(private router: Router) {
+    //Obtengo la navegacion actual
+    const navegacion = this.router.getCurrentNavigation();
+    //Obtengo el estado de la navegacion
+    const state = navegacion?.extras.state as {
+      user : {
+        username: string;
+        password: string; 
+      };
+    };
+    if(state){
+      this.user = state.user.username;
+    }
   }
 
   ngOnInit() {
