@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationExtras } from '@angular/router';
+import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -9,7 +9,14 @@ import { NavController } from '@ionic/angular';
 })
 export class RestablecerContrasenaPage implements OnInit {
 
-  constructor() { }
+  constructor(private activeroute: ActivatedRoute, private router: Router) { 
+    this.activeroute.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.data = this.router.getCurrentNavigation().extras.state.user;
+        console.log(this.data);
+      }
+    });
+  }
 
   ngOnInit() {
   }

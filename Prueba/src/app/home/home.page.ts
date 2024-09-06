@@ -96,7 +96,14 @@ export class HomePage {
   }*/
 
   restablecerContrasena() {
-    this.router.navigate(['/restablecer-contrasena'], );
+    let navigationExtras: NavigationExtras = {
+      state: {
+        user: this.user
+      }
+    };
+    this.router.navigate(['/restablecer-contrasena'], navigationExtras);
+    
   }
+  
   
 }
