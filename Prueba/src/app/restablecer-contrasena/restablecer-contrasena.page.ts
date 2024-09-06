@@ -24,7 +24,12 @@ export class RestablecerContrasenaPage implements OnInit {
     }
   }
 
+
+  /* Metodo para enviar los datos del usuario */
+  
   ngOnInit() {
   }
 
+
+  
 }

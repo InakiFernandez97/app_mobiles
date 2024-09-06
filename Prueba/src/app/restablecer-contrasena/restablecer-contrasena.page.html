@@ -10,12 +10,15 @@
       <ion-title size="large">restablecer Contraseña</ion-title>
     </ion-toolbar>
   </ion-header>
-  
+
   <ion-card-content>
     <ion-list>
       <ion-item>
-        <p>Hola {{user}}</p>
+        <ion-input [(ngModel)]="user" label="Usuario" labelPlacement="floating"
+          placeholder="ingrese su usuario"></ion-input>
       </ion-item>
+
+      
     </ion-list>
   </ion-card-content>
 
