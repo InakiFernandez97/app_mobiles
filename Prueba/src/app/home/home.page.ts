@@ -37,7 +37,7 @@ export class HomePage {
     //crear  y comfigurar la animacion
     const animation = this.animationController.create()
       .addElement(loginIcon)
-      .duration(5000)
+      .duration(9000)
       .iterations(Infinity)
       /* la configuracion de keyframe permite editar el diseño segun el tiempo de la animacion empezando desde 0 hasta 1 usando los decimales(0.5,0.25 ,0.2) */
       .keyframes([
@@ -66,7 +66,14 @@ export class HomePage {
             password: this.user.password,
           },
         };
-        this.router.navigate(['/inicio'], navigationExtras);
+        this.cambiarSpinner();
+        /* settimeout para delay */
+        setTimeout(() => {
+          this.router.navigate(['/inicio'], navigationExtras);
+          this.cambiarSpinner();
+          this.mensaje = '';
+        }, 1000);
+        
       } else {
         console.log('contraseña vacia');
         this.mensaje = 'contraseña vacia';
@@ -80,11 +87,16 @@ export class HomePage {
 
 
   /* Metodo para navegar a otra pagina */
-  SgtePagina() {
+ /* SgtePagina() {
     this.navCtrl.navigateForward('/inicio');
   }
 
   anteriorPagina() {
     this.navCtrl.navigateBack('/home');
+  }*/
+
+  restablecerContrasena() {
+    this.router.navigate(['/restablecer-contrasena'], );
   }
+  
 }
