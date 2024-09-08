@@ -12,10 +12,10 @@
   </ion-header>
 
   <div id="container">
-    <ion-card>
+    
       <strong>inicio de sesión</strong>
-      <br />
-
+      <br/>
+      <ion-card>
       <ion-card-content>
         <div class="login">
           <img src=".\assets\imagenes\Logo_DuocUC.png" />
@@ -40,10 +40,11 @@
           <div *ngIf="spinner">
             <ion-item id="carga">
               <ion-label>Cargando</ion-label>
-            </ion-item>
-            <ion-item id="carga">
               <mat-spinner></mat-spinner>
             </ion-item>
+            
+              
+            
           </div>
 
           <ion-button fill="outline" (click)="login()">Iniciar sesión</ion-button>
