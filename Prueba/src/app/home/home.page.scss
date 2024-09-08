@@ -36,3 +36,13 @@ ion-button {
   left: 50px; /* Espacio superior entre el spinner y los campos */
   
 }
+#carga {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  height: 20px; /* Ajusta la altura según sea necesario */
+  width: 20px;
+}

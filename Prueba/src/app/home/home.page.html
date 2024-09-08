@@ -36,15 +36,12 @@
             <h6>{{mensaje}}</h6>
             <ion-toggle justify="end">Recordar usuario</ion-toggle><br />
           </ion-item>
-
+          <br>
           <div *ngIf="spinner">
             <ion-item id="carga">
               <ion-label>Cargando</ion-label>
               <mat-spinner></mat-spinner>
             </ion-item>
-            
-              
-            
           </div>
 
           <ion-button fill="outline" (click)="login()">Iniciar sesión</ion-button>

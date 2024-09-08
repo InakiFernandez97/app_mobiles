@@ -64,7 +64,7 @@ export class HomePage {
     if (this.user.username.length != 0) {
       if (this.user.password.length != 0) {
         //funciona
-        this.mensaje = 'Bienvenido';
+        this.mensaje = 'Cargando';
         let navigationExtras: NavigationExtras = {
           state: {
             username: this.user.username,
