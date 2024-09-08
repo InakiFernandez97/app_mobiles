@@ -74,6 +74,11 @@ export class HomePage {
         this.cambiarSpinner();
         /* settimeout para delay */
         setTimeout(() => {
+          let navigationExtras: NavigationExtras = {
+            state: {
+              user: this.user,
+            },
+          };
           this.router.navigate(['/inicio'], navigationExtras);
           this.cambiarSpinner();
           this.mensaje = '';
@@ -97,10 +102,5 @@ export class HomePage {
     this.router.navigate(['/restablecer-contrasena'], navigationExtras);
   }
 
-  //RestablecerContrasena() {
-    //const state = {
-      //user: this.user,
-    //}
-    //this.navCtrl.navigateForward('/restablecer-contrasena', { state });
-  //}
+ 
 }

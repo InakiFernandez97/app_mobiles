@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      RegistrAPP
-    </ion-title>
+    <ion-title> RegistrAPP </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,36 +11,30 @@
     </ion-toolbar>
   </ion-header>
 
-
-
-
   <div id="container">
     <ion-card>
       <strong>inicio de sesión</strong>
-      <br>
+      <br />
 
       <ion-card-content>
         <div class="login">
-          <img src=".\assets\imagenes\Logo_DuocUC.png">
+          <img src=".\assets\imagenes\Logo_DuocUC.png" />
         </div>
 
         <ion-list>
           <ion-item>
-            <ion-input [(ngModel)]="user.username" label="Usuario" labelPlacement="floating"
-              placeholder="ingrese su usuario"></ion-input>
+            <ion-input
+              [(ngModel)]="user.username" label="Usuario" labelPlacement="floating" placeholder="ingrese su usuario"></ion-input>
           </ion-item>
 
           <ion-item>
-            <ion-input label="Contraseña" [(ngModel)]="user.password" labelPlacement="floating"
-              placeholder="ingrese su contraseña"></ion-input>
+            <ion-input
+              label="Contraseña" [(ngModel)]="user.password" labelPlacement="floating" placeholder="ingrese su contraseña"></ion-input>
           </ion-item>
 
           <ion-item>
+            <h6>{{mensaje}}</h6>
             <ion-toggle justify="end">Recordar usuario</ion-toggle><br />
-          </ion-item>
-
-          <ion-item>
-            <ion-label>{{mensaje}}</ion-label>
           </ion-item>
 
           <div *ngIf="spinner">
@@ -54,9 +46,9 @@
             </ion-item>
           </div>
 
-          <ion-button fill="outline" (click)="login()">Iniciar sesión</ion-button> <br>
+          <ion-button fill="outline" (click)="login()">Iniciar sesión</ion-button>
+          <br/>
           <ion-button fill="outline" (click)="restablecerContrasena()">Restablecer contraseña</ion-button>
-
         </ion-list>
       </ion-card-content>
     </ion-card>
