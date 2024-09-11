@@ -42,7 +42,7 @@ export class HomePage {
     const animation = this.animationController
       .create()
       .addElement(loginIcon)
-      .duration(9000)
+      .duration(10000)
       .iterations(Infinity)
       /* la configuracion de keyframe permite editar el diseño segun el tiempo de la animacion empezando desde 0 hasta 1 usando los decimales(0.5,0.25 ,0.2) */
       .keyframes([
@@ -61,8 +61,8 @@ export class HomePage {
 
   /* Metodo para enviar los datos del usuario */
   login() {
-    if (this.user.username.length != 0) {
-      if (this.user.password.length != 0) {
+    if (this.user.username == 'admin') {
+      if (this.user.password == 'admin') {
         //funciona
         this.mensaje = 'Cargando';
         let navigationExtras: NavigationExtras = {
@@ -84,12 +84,12 @@ export class HomePage {
           this.mensaje = '';
         }, 1000);
       } else {
-        console.log('contraseña vacia');
-        this.mensaje = 'contraseña vacia';
+        console.log('contraseña vacia o erronea');
+        this.mensaje = 'contraseña vacia o erronea';
       }
     } else {
-      console.log('usuario vacio');
-      this.mensaje = 'usuario vacio';
+      console.log('usuario vacio o erroneo');
+      this.mensaje = 'usuario vacio o erroneo';
     }
   }
 

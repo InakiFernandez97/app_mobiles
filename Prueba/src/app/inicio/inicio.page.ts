@@ -36,4 +36,7 @@ export class InicioPage implements OnInit {
     this.datos = navegacion?.extras.state?.['user'];
   }
 
+  registrarAsistencia(){
+    
+  }
 }

@@ -59,4 +59,9 @@ export class RestablecerContrasenaPage implements OnInit {
       await alert.present();
     }
   }
+
+  regresarLogin() {
+    this.navCtrl.navigateBack('/home');
+  }
+
 }

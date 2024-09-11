@@ -4,6 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -11,20 +12,21 @@
     </ion-toolbar>
   </ion-header>
 
+  <img src=".\assets\imagenes\lpa fondo.jpg" />
   <div id="container">
     
       <strong>inicio de sesión</strong>
       <br/>
-      <ion-card>
-      <ion-card-content>
+      <ion-card color="light">
+      <ion-card-content >
         <div class="login">
-          <img src=".\assets\imagenes\Logo_DuocUC.png" />
+          <img src=".\assets\imagenes\Logo-Autonomo-blanco.webp" />
         </div>
 
         <ion-list>
           <ion-item>
             <ion-input
-              [(ngModel)]="user.username" label="Usuario" labelPlacement="floating" placeholder="ingrese su usuario"></ion-input>
+              [(ngModel)]="user.username" label="Usuario" labelPlacement="floating" placeholder="ingrese su usuario" errorText="usuario invalido"></ion-input>
           </ion-item>
 
           <ion-item>

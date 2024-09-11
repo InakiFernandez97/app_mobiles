@@ -4,21 +4,31 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+
+
+<ion-content [fullscreen]="true" class="page-background">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">restablecer Contraseña</ion-title>
     </ion-toolbar>
   </ion-header>
 
+  
+  <div class="regresarLogin">
+    <ion-button aling="center" shape="home" (click)="regresarLogin()">Inicio</ion-button>
+  </div>
+
+  
+  
   <ion-card-content>
     <ion-list>
       <ion-item>
         <ion-input [(ngModel)]="user" label="Usuario" labelPlacement="floating" placeholder="ingrese su usuario"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-button expand="full" (click)="envioCorreo()">Enviar correo</ion-button>
+        <ion-button shape="round" (click)="envioCorreo()">Enviar correo</ion-button>
       </ion-item>
     </ion-list>
   </ion-card-content>
 </ion-content>
+

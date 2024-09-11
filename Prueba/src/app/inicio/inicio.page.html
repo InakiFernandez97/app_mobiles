@@ -13,7 +13,20 @@
 
   <ion-title>RegistrAPP</ion-title>
 
+  <ion-card-content>
   <div>
-    <h1>bienvenido {{user}} :D</h1>
+    <h1>bienvenido {{user}} </h1>
   </div>
+
+  <ion-card-content id="menu_opciones">
+    <h4>¿Que desea hacer?</h4>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button  color="primary" (click)="registrarAsistencia()">Registrar Asistencia</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card-content>
+</ion-card-content>
 </ion-content>
