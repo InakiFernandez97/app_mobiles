@@ -61,8 +61,8 @@ export class HomePage {
 
   /* Metodo para enviar los datos del usuario */
   login() {
-    if (this.user.username == 'admin') {
-      if (this.user.password == 'admin') {
+    if (this.user.username == 'ina.fernandez') {
+      if (this.user.password == '1234') {
         //funciona
         this.mensaje = 'Cargando';
         let navigationExtras: NavigationExtras = {
