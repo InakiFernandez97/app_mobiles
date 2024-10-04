@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { AnimationController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -27,6 +28,7 @@ export class HomePage {
     private router: Router,
     private animationController: AnimationController,
     private navCtrl: NavController,
+    private authService: AuthService,
 
   ) {}
   
@@ -61,8 +63,8 @@ export class HomePage {
 
   /* Metodo para enviar los datos del usuario */
   login() {
-    if (this.user.username == 'ina.fernandez') {
-      if (this.user.password == '1234') {
+    if (this.authService.login(this.user.username, this.user.password)) {
+      if (this.user.password) {
         //funciona
         this.mensaje = 'Cargando';
         let navigationExtras: NavigationExtras = {
