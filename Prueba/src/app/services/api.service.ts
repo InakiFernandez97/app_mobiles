@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class ApiService {
   private url = 'https://jsonplaceholder.typicode.com';
 
-
+ 
   constructor(private http: HttpClient) { }
 
   getPost() {
