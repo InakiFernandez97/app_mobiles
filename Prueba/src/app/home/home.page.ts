@@ -4,6 +4,7 @@ import { Router, NavigationExtras } from '@angular/router';
 import { AnimationController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { AuthService } from '../auth.service';
+import { Storage } from '@ionic/storage-angular';
 
 
 @Component({
@@ -29,8 +30,14 @@ export class HomePage {
     private animationController: AnimationController,
     private navCtrl: NavController,
     private authService: AuthService,
+    private storage: Storage
 
-  ) {}
+  ) {this.storage.create();}
+
+  async initStorage() {
+    await this.storage.create();// Inicializamos el storage antes de usarlo
+    
+  }
   
   ngAfterContentInit() {
     this.animarLogin();
@@ -81,7 +88,7 @@ export class HomePage {
               user: this.user,
             },
           };
-          this.router.navigate(['/inicio'], navigationExtras);
+          this.router.navigate(['/dashboard'], navigationExtras);
           this.cambiarSpinner();
           this.mensaje = '';
         }, 1000);
@@ -104,5 +111,19 @@ export class HomePage {
     this.router.navigate(['/restablecer-contrasena'], navigationExtras);
   }
 
- 
+  
+ username: string | null = null;
+ usernameAlmacenado: string | null = null;
+ // Guardar un nombre en localStorage
+guardarNombre() {
+  this.storage.set('usuario', this.username);
+  console.log('Nombre guardado:', this.username);
+  }
+
+  // Obtener el nombre almacenado en localStorage
+async obtenerNombre() {
+  this.usernameAlmacenado = await this.storage.get('usuario');
+  console.log('Username Almacenado:', this.usernameAlmacenado);
+  }
+
 }

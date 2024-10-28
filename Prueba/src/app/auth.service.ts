@@ -12,7 +12,7 @@ if (username === 'ina.fernandez' && password === '1234') {
 this.isAuthenticated = true;
 return true;
 }
-return false;
+return false; 
 }
 isLoggedIn(): boolean {
 return this.isAuthenticated;

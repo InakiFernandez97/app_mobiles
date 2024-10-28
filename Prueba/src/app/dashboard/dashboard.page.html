@@ -10,4 +10,30 @@
       <ion-title size="large">dashboard</ion-title>
     </ion-toolbar>
   </ion-header>
+
+
+  <ion-card>
+    <ion-card-content>
+      <ion-card-header>
+        <ion-card-title>que desea hacer</ion-card-title>
+    </ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="full" (click)="irAsistencia()">Ir a Asistencia</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="full" color="danger" (click)="cerrarSesion()">Cerrar Sesión</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    
+  </ion-card-content>
+  </ion-card>
+  
 </ion-content>
+
+
+
