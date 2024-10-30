@@ -9,12 +9,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'http://api.timezonedb.com/v2.1/get-time-zone?key=21JI1J9I6TF2&format=json&by=zone&zone=America/Santiago';
+  private apiUrl = 'localhost:3000/post/1';
 
  
   constructor(private http: HttpClient) { }
 
-  obtenerFechaChile(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
-  }
+  
 }

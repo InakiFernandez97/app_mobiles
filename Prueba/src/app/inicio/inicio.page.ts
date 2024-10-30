@@ -40,9 +40,7 @@ export class InicioPage implements OnInit {
     const navegacion = this.router.getCurrentNavigation();
     this.datos = navegacion?.extras.state?.['user'];
 
-    this.apiService.obtenerFechaChile().subscribe((data)=>{
-      this.fechaChile = data.formatted;
-    })
+   
   }
   registrarAsistencia(){
     
