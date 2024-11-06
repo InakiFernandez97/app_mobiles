@@ -12,7 +12,7 @@ export class InicioPage implements OnInit {
   user = '';
   datos: any;
 
-  fechaChile:string | null = null;
+  posts: any[] = [];
 
   constructor(private router: Router,
     private navCtrl: NavController,
@@ -39,6 +39,12 @@ export class InicioPage implements OnInit {
   ngOnInit() {
     const navegacion = this.router.getCurrentNavigation();
     this.datos = navegacion?.extras.state?.['user'];
+
+    this.apiService.getPosts().subscribe((data: any) => {
+      this.posts = data;
+      console.log(('api'))
+      console.log(this.posts);
+      });
 
    
   }

@@ -10,7 +10,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    
     "json_server": "json-server --watch db.json"
   },
   "private": true,
@@ -67,6 +66,4 @@
     "typescript": "~5.4.0"
   },
   "description": "An Ionic project"
-
-  
 }

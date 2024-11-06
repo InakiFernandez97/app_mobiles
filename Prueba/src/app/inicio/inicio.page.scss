@@ -1,0 +1,39 @@
+.table-container {
+    background-color: #2a2929; 
+    color: #fff; 
+    padding: 16px; 
+    border-radius: 8px; 
+    overflow-x: auto;
+  }
+
+.table-title {
+    text-align: center;
+    font-size: 1.5em;
+    color: #fff; 
+    margin: 16px 0; 
+  }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    background-color: #000; 
+    color: #fff; 
+    table-layout: auto;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #555; 
+  }
+  
+  th {
+    background-color: #333; 
+    font-weight: bold;
+  }
+  
+  tr:hover {
+    background-color: #444; 
+  }
+  

@@ -41,11 +41,7 @@ export class DashboardPage implements OnInit {
     this.datos = navegacion?.extras.state?.['user'];
   }
 
-  cerrarSesion()
-  {
 
-  }
-   
   irAsistencia()
   {
     let navigationExtras: NavigationExtras = {
@@ -67,9 +63,6 @@ logout() {
   console.log("Sesion cerrada")
   }
   }
-  //irainicio también funciona pero no pregunta antes de ejecutar
-  irainicio(){
-  this.router.navigate(['/inicio']);
-  }
+  
 
 }

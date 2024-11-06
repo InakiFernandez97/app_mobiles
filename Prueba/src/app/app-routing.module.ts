@@ -19,6 +19,9 @@ const routes: Routes = [
     path: 'inicio',
     loadChildren: () =>
       import('./inicio/inicio.module').then((m) => m.InicioPageModule),
+    canActivate: [canActivate],
+    canMatch: [CanmatchGuard],
+    canDeactivate: [CanDeactivateGuard],
   },
   {
     path: 'restablecer-contrasena',
@@ -40,6 +43,7 @@ const routes: Routes = [
     canMatch: [CanmatchGuard],
     canDeactivate: [CanDeactivateGuard],
   },
+
 ];
 
 @NgModule({
