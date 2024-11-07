@@ -114,6 +114,7 @@ export class HomePage {
   
  username: string | null = null;
  usernameAlmacenado: string | null = null;
+ 
  // Guardar un nombre en localStorage
 guardarNombre() {
   this.storage.set('usuario', this.username);
