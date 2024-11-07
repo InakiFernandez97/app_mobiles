@@ -111,20 +111,16 @@ export class HomePage {
     this.router.navigate(['/restablecer-contrasena'], navigationExtras);
   }
 
-  
- username: string | null = null;
- usernameAlmacenado: string | null = null;
- 
- // Guardar un nombre en localStorage
-guardarNombre() {
-  this.storage.set('usuario', this.username);
-  console.log('Nombre guardado:', this.username);
+   // Guardar un nombre en localStorage
+guardarRegistro() {
+  this.storage.set(this.user.password, this.user.username);
+  console.log('Nombre guardado:', this.user.username, this.user.password);
   }
 
   // Obtener el nombre almacenado en localStorage
-async obtenerNombre() {
-  this.usernameAlmacenado = await this.storage.get('usuario');
-  console.log('Username Almacenado:', this.usernameAlmacenado);
+async limpiarStorage() {
+  await this.storage.clear();
+  console.log('Almacenamiento limpiado:');
   }
 
 }
