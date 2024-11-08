@@ -36,7 +36,8 @@
 
           <ion-item>
             <h6>{{mensaje}}</h6>
-            <ion-button expand="full" (click)="guardarRegistro()">Guardar Nombre</ion-button><br/>
+            
+            <ion-checkbox (click)="guardarRegistro()">Guardar Nombre</ion-checkbox><br/>
           </ion-item>
           <br>
           <div *ngIf="spinner">

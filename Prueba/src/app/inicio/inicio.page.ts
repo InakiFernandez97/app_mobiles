@@ -14,7 +14,8 @@ export class InicioPage implements OnInit {
 
   posts: any[] = [];
 
-  constructor(private router: Router,
+  constructor(
+    private router: Router,
     private navCtrl: NavController,
     private route: ActivatedRoute,
     private apiService: ApiService) { 
