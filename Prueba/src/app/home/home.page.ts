@@ -117,7 +117,6 @@ guardarRegistro() {
   console.log('Nombre guardado:', this.user.username, this.user.password);
   }
 
-  // Obtener el nombre almacenado en localStorage
 async limpiarStorage() {
   await this.storage.clear();
   console.log('Almacenamiento limpiado:');
