@@ -3,6 +3,7 @@ import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { ApiService } from '../services/api.service';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { QrCodeModule } from 'ng-qrcode';
 
 
 @Component({

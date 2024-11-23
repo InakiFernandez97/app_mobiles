@@ -11,7 +11,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { provideHttpClient } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { QrCodeModule } from 'ng-qrcode';
-import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 
 @NgModule({
