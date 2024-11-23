@@ -10,24 +10,59 @@
       <ion-title size="large">inicio</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <ion-card>
-    <ion-card-content>
+  
       <div style="text-align: center;">
         <h2>Asistencia</h2>
       </div>
+  
+    
+      
 
-      <ion-card-content id="menu_opciones">
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <ion-button color="primary" (click)="registrarAsistencia()">Registrar Asistencia</ion-button>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-content>
-    </ion-card-content>
-  </ion-card>
+      <ion-content class="ion-padding ion-text-center">
+    
+        <ion-segment [(ngModel)]="segment">
+    
+          <ion-segment-button value="scan">
+            <ion-label>scan qr</ion-label>
+          </ion-segment-button>
+    
+          <ion-segment-button value="generate">
+            <ion-label>generar qr</ion-label>
+          </ion-segment-button>
+    
+        </ion-segment>
+    
+        <div *ngIf="segment === 'scan'">
+          g
+        </div>
+    
+    
+    
+        <div class="segment" *ngIf="segment === 'generate'">
+          <div class="segment-content">
+    
+            <div id="qrImage">
+              <div class="d-flex-center">
+                <div class="d-flex-center qr-wrapper">
+                    <qr-code value="https://www.npmjs.com/package/ng-qrcode"
+               size="300"
+               errorCorrectionLevel="M" *ngIf="segment === 'generate'"> </qr-code>
+                </div>
+    
+              </div>
+    
+            </div>
+    
+          </div>
+        </div>
+      
+
+    
+  
+
+  <div *ngIf="capturedImage">
+    <img [src]="capturedImage" alt="Imagen capturada" />
+  </div>
  
   <ion-content>
     <ion-grid>
@@ -58,4 +93,7 @@
       </ion-row>
     </ion-grid>
   </ion-content>
+
+      </ion-content>
 </ion-content>
+

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { ApiService } from '../services/api.service';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+
 
 @Component({
   selector: 'app-inicio',
@@ -9,10 +11,11 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
+  segment = 'scan';
   user = '';
   datos: any;
-
   posts: any[] = [];
+  capturedImage: string | null = null;
 
   constructor(
     private router: Router,
@@ -49,8 +52,23 @@ export class InicioPage implements OnInit {
 
    
   }
-  registrarAsistencia(){
-    
+  
+  async registrarAsistencia() {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: false,
+      resultType: CameraResultType.DataUrl,
+      source: CameraSource.Camera,
+    });
+
+    this.capturedImage = image.dataUrl ?? null;
+    console.log('Imagen capturada:', this.capturedImage);
   }
+
+  
+    generarAsistencia() {
+     
+    }
+  
 
 }
