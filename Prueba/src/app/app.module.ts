@@ -21,7 +21,7 @@ import { QrCodeModule } from 'ng-qrcode';
     AppRoutingModule,
     MatProgressSpinnerModule,
     IonicStorageModule.forRoot(),
-    QrCodeModule  
+    QrCodeModule
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
