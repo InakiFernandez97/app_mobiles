@@ -11,7 +11,7 @@
     </ion-toolbar>
   </ion-header>
   
-      <div style="text-align: center;">
+      <div style="text-align: center; background-color:#2a2626;" >
         <h2>Asistencia</h2>
       </div>
   
@@ -20,17 +20,16 @@
 
       <ion-content class="ion-padding ion-text-center">
     
-        <ion-segment [(ngModel)]="segment">
-    
-          <ion-segment-button value="scan">
-            <ion-label>scan qr</ion-label>
-          </ion-segment-button>
-    
-          <ion-segment-button value="generate">
-            <ion-label>generar qr</ion-label>
-          </ion-segment-button>
-    
-        </ion-segment>
+        <div style="background-color: #2a2626 ; padding: 10px; border-radius: 10px;">
+          <ion-segment [(ngModel)]="segment" mode="ios">
+            <ion-segment-button value="scan">
+              <ion-label>scan qr</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="generate">
+              <ion-label>generar qr</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </div>
     
         <div *ngIf="segment === 'scan'">
           g
@@ -44,9 +43,7 @@
             <div id="qrImage">
               <div class="d-flex-center">
                 <div class="d-flex-center qr-wrapper">
-                  <qr-code value="Hello world!" 
-                  size="300" 
-                  errorCorrectionLevel="M" />
+                  <qr-code [value]="qrText" size="190" errorCorrectionLevel="M" />
                 </div>
     
               </div>

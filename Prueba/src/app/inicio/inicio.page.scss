@@ -79,3 +79,32 @@ ion-button {
   justify-content: center;
   align-items: center;
 }
+
+ion-segment{
+  margin-top: 20px;
+}
+
+.segment{
+  padding: 30px 5px;
+} 
+
+.submit{
+  height: 44px;
+  --border-radius: 10px;
+  --background: var(--ion-color-tertiary);
+}
+
+.scan-label{
+  margin-top: 25px 0; 
+}
+
+img{
+  width: 200px;
+}
+
+.result{
+  color: black;
+  border: 1px dashed var(--ion-color-medium);
+  border-radius: 10px;
+  margin: 30px 0;
+}

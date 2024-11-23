@@ -13,6 +13,7 @@ import { QrCodeModule } from 'ng-qrcode';
 })
 export class InicioPage implements OnInit {
   segment = 'scan';
+  qrText = 'qrcito';
   user = '';
   datos: any;
   posts: any[] = [];
