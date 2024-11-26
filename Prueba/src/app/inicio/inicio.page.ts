@@ -1,9 +1,13 @@
+import { LensFacing} from './../../../node_modules/@capacitor-mlkit/barcode-scanning/dist/esm/definitions.d';
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
-import { NavController } from '@ionic/angular';
+import { ModalController, NavController} from '@ionic/angular';
 import { ApiService } from '../services/api.service';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { QrCodeModule } from 'ng-qrcode';
+import { addIcons } from 'ionicons';
+import { IonModal } from '@ionic/angular/common';
+import { BarcodeScanningModalComponent } from './barcode-scanning-modal.component';
 
 
 @Component({
@@ -18,12 +22,14 @@ export class InicioPage implements OnInit {
   datos: any;
   posts: any[] = [];
   capturedImage: string | null = null;
+  scanResult = '';
 
   constructor(
     private router: Router,
     private navCtrl: NavController,
     private route: ActivatedRoute,
-    private apiService: ApiService) { 
+    private apiService: ApiService,
+    private ModalController: ModalController) { 
 
       //Obtengo la navegacion actual
     const navegacion = this.router.getCurrentNavigation();
@@ -37,6 +43,24 @@ export class InicioPage implements OnInit {
     };
     if (state) {
       this.user = state.user.username;
+    }
+  }
+
+  async startScan() {
+    const modal = await this.ModalController.create({
+      component: BarcodeScanningModalComponent,
+      cssClass: 'barcode-scanning-modal',
+      showBackdrop: false,
+      componentProps: {
+         formats: [], 
+         LensFacing: LensFacing.Back }
+    });
+
+    await modal.present();
+
+    const { data } = await modal.onWillDismiss();
+    if (data) {
+      this.scanResult = data?.barcode?.displayValue;
     }
   }
 
@@ -54,23 +78,4 @@ export class InicioPage implements OnInit {
 
    
   }
-  
-  async registrarAsistencia() {
-    const image = await Camera.getPhoto({
-      quality: 90,
-      allowEditing: false,
-      resultType: CameraResultType.DataUrl,
-      source: CameraSource.Camera,
-    });
-
-    this.capturedImage = image.dataUrl ?? null;
-    console.log('Imagen capturada:', this.capturedImage);
-  }
-
-  
-    generarAsistencia() {
-     
-    }
-  
-
 }

@@ -8,6 +8,7 @@ import { InicioPageRoutingModule } from './inicio-routing.module';
 
 import { InicioPage } from './inicio.page';
 import { QrCodeModule } from 'ng-qrcode';
+import { BarcodeScanningModalComponent } from './barcode-scanning-modal.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { QrCodeModule } from 'ng-qrcode';
     InicioPageRoutingModule,
     QrCodeModule,
   ],
-  declarations: [InicioPage]
+  declarations: [InicioPage, BarcodeScanningModalComponent]
 })
 export class InicioPageModule {}
