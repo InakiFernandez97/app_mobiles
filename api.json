@@ -1,0 +1,17 @@
+{
+    "posts": [
+      { "rut": "21358484-7", "nombre": "Emilio", "apellido": "Cruz", "asistencia": 9 },
+      { "rut": "21314351-4", "nombre": "Juan", "apellido": "González", "asistencia": 8 },
+      { "rut": "21453579-1", "nombre": "Alvaro", "apellido": "Jaña", "asistencia": 6 },
+      { "rut": "21461564-4", "nombre": "Benjamin", "apellido": "Diaz", "asistencia": 5 },
+      { "rut": "21929682-7", "nombre": "Marina", "apellido": "Herrera", "asistencia": 7 },
+      { "rut": "21314351-4", "nombre": "Iñaki", "apellido": "Fernandez", "asistencia": 8 },
+      { "rut": "21426453-5", "nombre": "Francisca", "apellido": "Vivanco", "asistencia": 3 },
+      { "rut": "21316451-4", "nombre": "Isidora", "apellido": "Fernandez", "asistencia": 1 },
+      { "rut": "21473835-3", "nombre": "Matias", "apellido": "Bustamante", "asistencia": 1 },
+      { "rut": "12647454-7", "nombre": "Gustavo", "apellido": "Cerati", "asistencia": 4 },
+      { "rut": "21358824-4", "nombre": "Alejandra", "apellido": "Villarreal", "asistencia": 10 },
+      { "rut": "21534561-4", "nombre": "Benjamin", "apellido": "Vargas", "asistencia": 5 }
+    ]
+    
+  } 
