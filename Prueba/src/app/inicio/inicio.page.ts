@@ -1,13 +1,13 @@
-import { LensFacing} from './../../../node_modules/@capacitor-mlkit/barcode-scanning/dist/esm/definitions.d';
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
-import { ModalController, NavController} from '@ionic/angular';
+import { ModalController, NavController, Platform} from '@ionic/angular';
 import { ApiService } from '../services/api.service';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { QrCodeModule } from 'ng-qrcode';
 import { addIcons } from 'ionicons';
 import { IonModal } from '@ionic/angular/common';
 import { BarcodeScanningModalComponent } from './barcode-scanning-modal.component';
+import { BarcodeScanner, LensFacing } from '@capacitor-mlkit/barcode-scanning';
 
 
 @Component({
@@ -17,7 +17,7 @@ import { BarcodeScanningModalComponent } from './barcode-scanning-modal.componen
 })
 export class InicioPage implements OnInit {
   segment = 'scan';
-  qrText = 'qrcito';
+  qrText = '';
   user = '';
   datos: any;
   posts: any[] = [];
@@ -29,8 +29,9 @@ export class InicioPage implements OnInit {
     private navCtrl: NavController,
     private route: ActivatedRoute,
     private apiService: ApiService,
-    private ModalController: ModalController) { 
-
+    private ModalController: ModalController,
+    private platform: Platform) { 
+      
       //Obtengo la navegacion actual
     const navegacion = this.router.getCurrentNavigation();
     //nav=navextras.user.username;
@@ -45,6 +46,24 @@ export class InicioPage implements OnInit {
       this.user = state.user.username;
     }
   }
+
+  ngOnInit() {
+    const navegacion = this.router.getCurrentNavigation();
+    this.datos = navegacion?.extras.state?.['user'];
+
+    this.apiService.getPosts().subscribe((data: any) => {
+      this.posts = data;
+      console.log(('api'))
+      console.log(this.posts);
+      });
+
+    if(this.platform) {
+      BarcodeScanner.isSupported().then;
+      BarcodeScanner.checkPermissions().then;
+      BarcodeScanner.removeAllListeners();
+    }
+   
+    }
 
   async startScan() {
     const modal = await this.ModalController.create({
@@ -66,16 +85,5 @@ export class InicioPage implements OnInit {
 
     
 
-  ngOnInit() {
-    const navegacion = this.router.getCurrentNavigation();
-    this.datos = navegacion?.extras.state?.['user'];
-
-    this.apiService.getPosts().subscribe((data: any) => {
-      this.posts = data;
-      console.log(('api'))
-      console.log(this.posts);
-      });
-
-   
-  }
+  
 }

@@ -52,14 +52,15 @@
             <div class="d-flex-center qr-wrapper">
               <qr-code [value]="qrText" size="190" errorCorrectionLevel="M" />
             </div>
+
           </div>
+          <hr>
+          <ion-textarea label="Ingrese asignatura" labelPlacement="stacked" fill="outline" style="background-color: #2a2626;" [(ngModel)]="qrText"></ion-textarea>
         </div>
       </div>
     </div>
 
-    <div *ngIf="capturedImage">
-      <img [src]="capturedImage" alt="Imagen capturada" />
-    </div>
+    
 
     <ion-content>
       <ion-grid>
